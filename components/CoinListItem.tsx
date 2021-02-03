@@ -12,13 +12,13 @@ export default function Searchbar({coin}) {
                 <Image style={styles.pic} source={{uri: coin.image}}/>
                 <Text style={styles.name}>${coin.symbol.toUpperCase()}</Text>
             </View>
-            <Text style={styles.text}>${coin.current_price.toFixed(2)}</Text>
+            <Text style={styles.text}>${coin.current_price.toLocaleString()}</Text>
             { coin.price_change_24h > 0 ?
-            <Text style={styles.up}>+${coin.price_change_24h.toFixed(2)}</Text>
-            : <Text style={styles.down}>{coin.price_change_24h.toFixed(2)}</Text>}
+            <Text style={styles.up}>+${coin.price_change_24h.toLocaleString()}</Text>
+            : <Text style={styles.down}>{coin.price_change_24h.toLocaleString()}</Text>}
             {coin.price_change_percentage_24h > 0?
-            <Text style={styles.up}>+${coin.price_change_percentage_24h.toFixed(2)}%</Text>
-            : <Text style={styles.down}>{coin.price_change_percentage_24h.toFixed(2)}%</Text>}
+            <Text style={styles.up}>+${coin.price_change_percentage_24h.toLocaleString()}%</Text>
+            : <Text style={styles.down}>{coin.price_change_percentage_24h.toLocaleString()}%</Text>}
 
         </View>
     </Pressable>
