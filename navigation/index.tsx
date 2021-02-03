@@ -11,10 +11,21 @@ import LinkingConfiguration from './LinkingConfiguration';
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
+  const MyTheme = {
+    dark: false,
+    colors: {
+      primary: '#63609C',
+      background: '#070816',
+      card: 'rgb(0, 0, 0)',
+      text: '#FCFCFC',
+      border: '#181e2f',
+      notification: 'rgb(255, 69, 58)',
+    },
+  };
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
-      theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      theme={MyTheme}>
       <RootNavigator />
     </NavigationContainer>
   );

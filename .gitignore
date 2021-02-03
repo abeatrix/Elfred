@@ -21,3 +21,4 @@ web-build/
 # @end @expo/electron-adapter
 .expo-shared
 .vscode
+.env
