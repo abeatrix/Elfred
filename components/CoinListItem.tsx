@@ -10,7 +10,7 @@ export default function Searchbar({coin}) {
         <View style={styles.wrapper}>
             <View style={styles.col}>
                 <Image style={styles.pic} source={{uri: coin.image}}/>
-                <Text style={styles.name}>${coin.symbol.toUpperCase()}</Text>
+                {/* <Text style={styles.name}>${coin.symbol.toUpperCase()}</Text> */}
             </View>
             <Text style={styles.text}>${coin.current_price.toLocaleString()}</Text>
             { coin.price_change_24h > 0 ?
@@ -27,23 +27,23 @@ export default function Searchbar({coin}) {
 
 const styles = StyleSheet.create({
 container: {
+    width: "95%",
     margin: 10,
     backgroundColor: '#343756',
     padding: 20,
     alignItems: 'center',
-    justifyContent: 'center',
 },
 wrapper: {
+    width: "100%",
     flexDirection: 'row',
     backgroundColor: '#343756',
     alignItems: 'center',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
 },
 col: {
     backgroundColor: '#343756',
     alignItems: 'center',
-    marginRight: 10,
-    minWidth: 200,
+    width: "10%",
 },
 pic: {
     width: 50,
@@ -56,16 +56,16 @@ name: {
 text: {
     color: '#FCFCFC',
     marginHorizontal: 10,
-    minWidth: 100,
+    minWidth: "5%",
 },
 up: {
     color: '#00CFC7',
     marginHorizontal: 10,
-    minWidth: 100,
+    minWidth: "5%",
 },
 down: {
     color: '#E21B59',
     marginHorizontal: 10,
-    minWidth: 100,
+    minWidth: "5%",
 }
 });

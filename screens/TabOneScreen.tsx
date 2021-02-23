@@ -35,13 +35,15 @@ export default function TabOneScreen() {
       <Text style={styles.title}>Elfred</Text>
       <TextInput style={styles.input} placeholderTextColor="#FCFCFC" placeholder="Search" onChangeText={(text) => {setQuery(text); search();}}/>
       {/* <Searchbar onChangeText={(text) => setQuery({text}, () => search()) }/> */}
-      {coins? <FlatList
-      data={coins}
-      showsVerticalScrollIndicator={false}
-      snapToAlignment={"center"}
-      renderItem={({item})=>
-        <CoinListItem key={item.id} coin={item} />
-      }/> : null}
+      <View style={styles.coins}>
+        {coins? <FlatList
+        data={coins}
+        showsVerticalScrollIndicator={false}
+        snapToAlignment={"center"}
+        renderItem={({item})=>
+          <CoinListItem key={item.id} coin={item} />
+        }/> : null}
+      </View>
       {/* <EditScreenInfo path="/screens/TabOneScreen.tsx" /> */}
     </View>
   );
@@ -49,6 +51,7 @@ export default function TabOneScreen() {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 150,
     flex: 1,
     backgroundColor: '#070816',
     alignItems: 'center',
@@ -68,9 +71,15 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: "#63609C",
-    minWidth: 610,
+    width: "90%",
     padding: 30,
     color: 'white',
+  },
+  coins: {
+    backgroundColor: '#070816',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: "90%"
   }
 
 });
